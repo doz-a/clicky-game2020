@@ -7,7 +7,16 @@ class Footer extends React.Component {
             <div class="Footer">
                 <br></br>
                 <br></br>
-                Footer goes here Hi :)
+                Miguel Delos Santos
+                <br></br>
+                <a
+                    className="App-link"
+                    href="https://github.com/doz-a/clicky-game2020"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Github Repo
+      </a>
                 <br></br>
                 <br></br>
                 <br></br>
