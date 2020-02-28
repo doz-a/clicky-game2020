@@ -5,14 +5,13 @@ class Header extends React.Component {
 
     render() {
         return (
-            <div class="Header">
-                <br></br>
-                <br></br>
+            <div className="Header">
+                <br />
+                <br />
                 Header goes here hello :)
-                <br></br>
+                <br />
                 <Timer />
-                <br></br>
-                <br></br>
+                <br /><br />
             </div>
         );
     };
