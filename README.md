@@ -1,5 +1,5 @@
 ---
-permalink: /index.html
+permalink: klicky\public\index.html
 ---
 
 # clicky-game2020
