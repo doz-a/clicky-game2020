@@ -11,54 +11,62 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 class App extends Component {
   state = {
-    friends
+    friends,
+    score: 0,
+    topScore: 0,
+    message: "Click a food to start the game :)"
   };
+
+  handleClick = (id, clicked) => {
+    const imageOrder = this.state.images;
+    if (clicked) {
+      imageOrder.forEach((image, index) => {
+        imageOrder[index].clicked = false;
+      });
+      return this.setState({
+        image: imageOrder.sort(() => Math.random() - 0.)
+      })
+    }
+  }
+
   render() {
     return (
-      <div className="App">
+      <Container fluid id="container">
         <Header />
-        <Container>
-          <Row>
-            <Col>
-              1 col
-            </Col>
-            <Col>
-              2 Col
-            </Col>
-          </Row>
-        </Container>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+        <br></br>
+        <img src={logo} className="App-logo" alt="logo" />
+        <br />
+        <br />
 
-          Welcome to the klicky game
+        <Timer />
+        <br />
+        <Row>
+          <Col>
+            <p>{this.state.message}</p>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <p>Current Score: {this.state.score} || Your Best Score: {this.state.topScore}</p>
+          </Col>
+        </Row>
+        <Row>
 
-      <Timer />
-          <a
-            className="App-link"
-            href="https://github.com/doz-a/clicky-game2020"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Github Repo
-      </a>
 
-          <div>
-            <Row>
-              {this.state.friends.map(friend => (
-                <FriendCard
-                  id={friend.id}
-                  key={friend.id}
-                  image={friend.image}
-                />
-              ))
-              }
-            </Row>
-          </div>
-
-        </header>
+          {/* Card Holder */}
+          {this.state.friends.map(friend => (
+            <FriendCard
+              id={friend.id}
+              key={friend.id}
+              image={friend.image}
+            />
+          ))
+          }
+          {/* End Card Holder  */}
+        </Row>
 
         <Footer />
-      </div>
+      </Container>
     )
 
   }

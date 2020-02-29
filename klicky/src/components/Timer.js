@@ -22,9 +22,9 @@ class Timer extends React.Component {
 
     render() {
         return (
-            <div>
+            <p>
                 Time spent klicking: {this.state.seconds}
-            </div>
+            </p>
         );
     }
 }

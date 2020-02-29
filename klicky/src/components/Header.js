@@ -1,5 +1,4 @@
 import React from 'react';
-import Timer from './Timer'
 
 class Header extends React.Component {
 
@@ -8,10 +7,10 @@ class Header extends React.Component {
             <div className="Header">
                 <br />
                 <br />
-                Header goes here hello :)
+                Welcome to the klicky game
                 <br />
-                <Timer />
                 <br /><br />
+                <hr />
             </div>
         );
     };

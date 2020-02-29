@@ -9,7 +9,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* CARD  */
+#container {
+  padding: 0;
+}
+
+#col {
+  padding: 0;
+  align-content: center;
+}
+
+.container-fluid {
+  width: 100%;
+  background: #343a44;
+  margin: 0;
+  text-align: center;
+}
+
+div {
+  align-content: center;
+  text-align: center;
+  padding: 0;
+}
+
+.row {
+  text-align: center;
+}
 
 .card {
   background: #343a44;
@@ -48,15 +72,7 @@ code {
   margin-top: 18px;
 }
 
-.card>.remove {
-  color: #ff1744;
-  font-size: 48px;
-  position: absolute;
-  /* top: -20px; */
-  /* right: 5px; */
-  cursor: pointer;
-}
-
-.card>.remove:hover {
-  color: #d50000;
+p {
+  text-align: center;
+  color: white
 }
