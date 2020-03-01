@@ -47,7 +47,7 @@ class App extends Component {
         </Row>
         <Row>
           <Col>
-            <p>Current Score: {this.state.score} || Your Best Score: {this.state.topScore}</p>
+            <p>test Current Score: {this.state.score} || Your Best Score: {this.state.topScore}</p>
           </Col>
         </Row>
         <Row>
