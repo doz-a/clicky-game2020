@@ -11,33 +11,41 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 class App extends Component {
   state = {
+
     // JSON
     friends,
     score: 0,
     topScore: 0,
-    message: "Click a food to start the game :)"
+    message: "Klick on each image only once, and try to get the top score! Klick a food to start the game :)"
   };
 
-  handleClick = (id, clicked) => {
+  handleKlick = (id, klicked) => {
     const friendsOrder = this.state.friends;
-    // console.log("click works" + JSON.stringify(friendsOrder))
+    // console.log("klick works" + JSON.stringify(friendsOrder))
 
-    // Resets game 
-    if (clicked) {
+    // Win statement (if you can get there)
+    if (this.state.score === 12) {
+      return this.setState({
+        message: "You win! You have the memory of an elephant!"
+      })
+    }
+
+    else if (klicked) {
       friendsOrder.forEach((friend, index) => {
-        friendsOrder[index].clicked = false;
+        friendsOrder[index].klicked = false;
       });
       // Randomizer 
       return this.setState({
         friend: friendsOrder.sort(() => Math.random() - 0.5),
-        message: "Wrong Guess!",
+        message: "Wrong Guess! Try playing again :)",
         score: 0
       })
     }
+
     else {
       friendsOrder.forEach((friend, index) => {
         if (id === friend.id) {
-          friendsOrder[index].clicked = true;
+          friendsOrder[index].klicked = true;
         }
       });
 
@@ -64,35 +72,33 @@ class App extends Component {
         <br />
 
         <Timer />
-        <br />
+
         <Row>
           <Col>
+            {/* Game message  */}
             <p>{this.state.message}</p>
           </Col>
         </Row>
         <Row>
           <Col>
-            <p>testd Current Score: {this.state.score} || Your Best Score: {this.state.topScore}</p>
+            <p>Your Current Score: {this.state.score} || Your Best Score: {this.state.topScore}</p>
           </Col>
         </Row>
         <Row>
-
-
-          {/* Card Holder */}
           {this.state.friends.map(friend => (
-            <Col sm="3" id="col">
+            <Col sm="2" id="col">
               <FriendCard
                 id={friend.id}
                 key={friend.id}
                 image={friend.image}
-                clicked={friend.clicked}
-                handleClick={this.handleClick}
+                klicked={friend.klicked}
+                handleKlick={this.handleKlick}
               />
             </Col>
           ))
           }
-          {/* End Card Holder  */}
         </Row>
+        <br />
 
         <Footer />
       </Container>

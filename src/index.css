@@ -14,7 +14,6 @@ code {
 }
 
 .Col {
-  padding: 0;
   align-content: center;
   margin: auto;
 }
@@ -30,6 +29,7 @@ div {
   align-content: center;
   text-align: center;
   margin: auto;
+  padding: 0 0 0 0;
 }
 
 .row {

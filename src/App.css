@@ -17,13 +17,13 @@
 .Header {
   background-color: #525964;
   color: white;
-  font-size: calc(10px + 2vmin);
+  font-size: 50px;
   width: 100%;
   padding: 0;
 }
 
 .Footer {
-  background-color: #343a44;
+  background-color: #525964;
   color: white;
   font-size: calc(10px + 2vmin);
 }
