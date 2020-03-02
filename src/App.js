@@ -11,7 +11,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 class App extends Component {
   state = {
-    // json 
+    // JSON
     friends,
     score: 0,
     topScore: 0,
@@ -19,7 +19,39 @@ class App extends Component {
   };
 
   handleClick = (id, clicked) => {
-    console.log("click works" + this.state.id)
+    const friendsOrder = this.state.friends;
+    // console.log("click works" + JSON.stringify(friendsOrder))
+
+    // Resets game 
+    if (clicked) {
+      friendsOrder.forEach((friend, index) => {
+        friendsOrder[index].clicked = false;
+      });
+      // Randomizer 
+      return this.setState({
+        friend: friendsOrder.sort(() => Math.random() - 0.5),
+        message: "Wrong Guess!",
+        score: 0
+      })
+    }
+    else {
+      friendsOrder.forEach((friend, index) => {
+        if (id === friend.id) {
+          friendsOrder[index].clicked = true;
+        }
+      });
+
+      const { topScore, score } = this.state;
+      const newScore = score + 1;
+      const newTopScore = newScore > topScore ? newScore : topScore;
+
+      return this.setState({
+        friend: friendsOrder.sort(() => Math.random() - .5),
+        message: "Good Guess!",
+        score: newScore,
+        topScore: newTopScore,
+      })
+    }
   }
 
   render() {
