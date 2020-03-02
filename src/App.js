@@ -11,6 +11,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 class App extends Component {
   state = {
+    // json 
     friends,
     score: 0,
     topScore: 0,
@@ -18,15 +19,7 @@ class App extends Component {
   };
 
   handleClick = (id, clicked) => {
-    const imageOrder = this.state.images;
-    if (clicked) {
-      imageOrder.forEach((image, index) => {
-        imageOrder[index].clicked = false;
-      });
-      return this.setState({
-        image: imageOrder.sort(() => Math.random() - 0.)
-      })
-    }
+    console.log("click works" + this.state.id)
   }
 
   render() {
@@ -55,11 +48,15 @@ class App extends Component {
 
           {/* Card Holder */}
           {this.state.friends.map(friend => (
-            <FriendCard
-              id={friend.id}
-              key={friend.id}
-              image={friend.image}
-            />
+            <Col sm="3" id="col">
+              <FriendCard
+                id={friend.id}
+                key={friend.id}
+                image={friend.image}
+                clicked={friend.clicked}
+                handleClick={this.handleClick}
+              />
+            </Col>
           ))
           }
           {/* End Card Holder  */}
