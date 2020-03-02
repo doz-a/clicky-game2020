@@ -5,19 +5,15 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 function FriendCard(props) {
     return (
-        <Col sm="3" id="col">
-
-
-            <div className="card" id="card">
-                <div className="img-container">
-                    <img alt={props.id} src={props.image} />
-                </div>
-                <div className="content">
-                    id: {props.id}
-
-                </div>
+        <div
+            className="card" id="card"
+            key={props.id}
+            onClick={() => props.handleClick(props.id, props.clicked)}
+        >
+            <div className="img-container">
+                <img alt={props.id} src={props.image} />
             </div>
-        </Col>
+        </div>
     );
 }
 

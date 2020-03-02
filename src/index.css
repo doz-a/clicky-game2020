@@ -13,9 +13,9 @@ code {
   padding: 0;
 }
 
-#col {
-  padding: 0;
+.Col {
   align-content: center;
+  margin: auto;
 }
 
 .container-fluid {
@@ -28,7 +28,8 @@ code {
 div {
   align-content: center;
   text-align: center;
-  padding: 0;
+  margin: auto;
+  padding: 0 0 0 0;
 }
 
 .row {
@@ -39,7 +40,7 @@ div {
   background: #343a44;
   border-radius: 2px;
   height: 150px;
-  margin: 1rem;
+  margin: 15px auto 15px auto;
   position: relative;
   width: 160px;
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
@@ -60,6 +61,7 @@ div {
 .card>.content {
   padding-left: 1rem;
   padding-right: 1rem;
+  /* padding-bottom: 1rem; */
   font-size: 15px;
   color: black;
 }

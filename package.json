@@ -19,7 +19,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,6 +37,10 @@
       "last 1 safari version"
     ]
   },
+<<<<<<< HEAD
+=======
+  "homepage": "https://doz-a.github.io/clicky-game2020/",
+>>>>>>> 7ec969e754ea136a40250e8c8ecb9ae2d32ca408
   "devDependencies": {
     "gh-pages": "^2.2.0"
   }

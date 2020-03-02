@@ -6,11 +6,9 @@ class Header extends React.Component {
         return (
             <div className="Header">
                 <br />
+                The Klicky Game
                 <br />
-                Welcome to the klicky game
                 <br />
-                <br /><br />
-                <hr />
             </div>
         );
     };
