@@ -1,6 +1,4 @@
 import React from "react";
-import { Container, Row, Col } from 'react-bootstrap';
-// Add style later 
 // import "./style.css";
 
 function FriendCard(props) {
@@ -8,7 +6,7 @@ function FriendCard(props) {
         <div
             className="card" id="card"
             key={props.id}
-            onClick={() => props.handleClick(props.id, props.clicked)}
+            onClick={() => props.handleKlick(props.id, props.klicked)}
         >
             <div className="img-container">
                 <img alt={props.id} src={props.image} />
